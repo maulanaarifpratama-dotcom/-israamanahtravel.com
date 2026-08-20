@@ -8,42 +8,6 @@ function WhatsAppIcon() {
   )
 }
 
-const socials = [
-  {
-    name: 'Instagram',
-    handle: '@isratour.id',
-    href: 'https://instagram.com/isratour.id',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="2" y="2" width="20" height="20" rx="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-      </svg>
-    ),
-  },
-  {
-    name: 'Facebook',
-    handle: 'Isra Tour',
-    href: 'https://facebook.com',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 8.5V6.8c0-.9.4-1.3 1.3-1.3H17V2.6h-2.4c-2.6 0-3.9 1.4-3.9 3.9v2H9v3h1.7v9.9h3.3v-9.9h2.4l.4-3H14z" />
-      </svg>
-    ),
-  },
-  {
-    name: 'TikTok',
-    handle: '@isratour_id',
-    href: 'https://tiktok.com/@isratour_id',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14.2 2.5v11.9a3.6 3.6 0 11-3.6-3.6c.35 0 .68.05 1 .14" />
-        <path d="M14.2 2.5a5.1 5.1 0 005.1 5.1" />
-      </svg>
-    ),
-  },
-]
-
 export default function Footer() {
   return (
     <footer className="bg-dark-900 border-t border-white/8">
@@ -87,26 +51,6 @@ export default function Footer() {
               <WhatsAppIcon />
               0857-5735-8682
             </a>
-            <div className="flex gap-3 pt-2">
-              {socials.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.name}
-                  className="w-11 h-11 rounded-full flex items-center justify-center text-white/75 hover:text-gold transition-all duration-200 hover:scale-110 active:scale-95"
-                  style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.14)' }}
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
-            <div className="pt-1 space-y-1">
-              {socials.map((s) => (
-                <p key={s.handle} className="text-white/60 text-xs font-body">{s.handle}</p>
-              ))}
-            </div>
           </div>
         </div>
 
