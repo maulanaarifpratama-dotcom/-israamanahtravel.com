@@ -47,23 +47,18 @@ const pdfs = [
 
 export default function Downloads() {
   return (
-    <section
-      className="py-20 px-5"
-      style={{
-        background: 'linear-gradient(135deg, #0C0C0C 0%, #1a1400 50%, #0C0C0C 100%)',
-      }}
-    >
+    <section className="bg-cream py-20 px-5">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12" data-animate>
-          <p className="text-gold/70 text-xs tracking-[0.35em] uppercase font-semibold font-body mb-3">Informasi Perjalanan</p>
+          <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold font-body mb-3">Informasi Perjalanan</p>
           <h2
-            className="font-heading font-bold text-white leading-tight"
+            className="font-heading font-bold text-dark-900 leading-tight"
             style={{ fontSize: 'clamp(1.7rem, 4vw, 2.5rem)' }}
           >
             Download Itinerary Lengkap
           </h2>
-          <p className="text-white/45 mt-3 text-base font-body max-w-xl mx-auto">
+          <p className="text-gray-500 mt-3 text-base font-body max-w-xl mx-auto">
             Pelajari jadwal perjalanan sebelum mendaftar. Hubungi Maya untuk informasi terkini.
           </p>
           <div className="flex items-center justify-center gap-3 mt-5">
@@ -82,22 +77,23 @@ export default function Downloads() {
               key={pdf.title}
               className="rounded-2xl p-6 flex flex-col gap-5"
               style={{
-                background: 'rgba(212,175,55,0.04)',
-                border: '1px solid rgba(212,175,55,0.2)',
+                background: '#FFFFFF',
+                border: '1.5px solid rgba(212,175,55,0.3)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
               }}
               data-animate
             >
               <div className="flex items-start gap-4">
                 <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-gold"
-                  style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.2)' }}
+                  style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.25)' }}
                 >
                   <PdfIcon />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-white text-lg leading-snug">{pdf.title}</h3>
-                  <p className="text-gold/70 text-xs font-semibold font-body mt-0.5">{pdf.subtitle}</p>
-                  <p className="text-white/45 text-sm font-body mt-2 leading-snug">{pdf.desc}</p>
+                  <h3 className="font-heading font-bold text-dark-900 text-lg leading-snug">{pdf.title}</h3>
+                  <p className="text-gold text-xs font-semibold font-body mt-0.5">{pdf.subtitle}</p>
+                  <p className="text-gray-500 text-sm font-body mt-2 leading-snug">{pdf.desc}</p>
                 </div>
               </div>
 

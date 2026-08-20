@@ -130,7 +130,7 @@ export default function Services() {
               key={s.nama}
               className="group bg-white rounded-2xl p-5 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-gold/10 cursor-default border border-transparent hover:border-gold/20"
               data-animate
-              style={{ animationDelay: `${i * 60}ms` }}
+              style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="w-14 h-14 mx-auto mb-3 rounded-xl flex items-center justify-center text-gold transition-all duration-300 group-hover:bg-dark-900 group-hover:text-gold"
                 style={{ background: 'rgba(212,175,55,0.1)' }}>

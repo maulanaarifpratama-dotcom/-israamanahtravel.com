@@ -37,17 +37,16 @@ function WhatsAppIcon() {
 }
 
 const CARD_GRADIENTS = [
-  'linear-gradient(145deg, #1C0E00 0%, #2D1A00 55%, #1C0E00 100%)',
-  'linear-gradient(145deg, #05101F 0%, #0C1D3B 55%, #05101F 100%)',
-  'linear-gradient(145deg, #1C0808 0%, #2D1010 55%, #1C0808 100%)',
+  'linear-gradient(145deg, #FFFBEF 0%, #FFF3CC 55%, #FFFBEF 100%)',
+  'linear-gradient(145deg, #F5F8FF 0%, #EDF2FF 55%, #F5F8FF 100%)',
+  'linear-gradient(145deg, #FFF8F5 0%, #FFEDE8 55%, #FFF8F5 100%)',
 ]
 
 export default function Packages() {
   return (
-    <section id="paket" className="bg-dark-900 py-20 px-5">
+    <section id="paket" className="bg-cream py-20 px-5">
       <div className="max-w-5xl mx-auto">
         <SectionTitle
-          dark
           label="Pilih Paket Terbaik"
           title="Paket Umroh & Haji 2026"
           sub="Setiap paket dirancang untuk memberikan perjalanan ibadah terbaik dengan harga yang terjangkau."
@@ -57,10 +56,10 @@ export default function Packages() {
           {packages.map((pkg, i) => (
             <div
               key={pkg.id}
-              className={`relative rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 ${
+              className={`relative rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 bg-white ${
                 pkg.highlight
-                  ? 'ring-1 ring-gold/70 shadow-[0_0_40px_rgba(212,175,55,0.15)]'
-                  : 'gold-border'
+                  ? 'ring-2 ring-gold/60 shadow-[0_8px_40px_rgba(212,175,55,0.18)]'
+                  : 'shadow-md shadow-black/6 ring-1 ring-black/5'
               }`}
               data-animate
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -89,9 +88,9 @@ export default function Packages() {
                 style={{ background: CARD_GRADIENTS[i] }}
               >
                 <div className="absolute inset-0 pattern-bg opacity-[0.1]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <svg width="72" height="72" viewBox="0 0 72 72" className="text-gold opacity-[0.07]">
+                  <svg width="72" height="72" viewBox="0 0 72 72" className="text-gold opacity-25">
                     <polygon points="36,2 70,36 36,70 2,36" fill="currentColor" />
                     <polygon points="36,16 56,36 36,56 16,36" fill="none" stroke="currentColor" strokeWidth="1.5" />
                     <polygon points="36,28 44,36 36,44 28,36" fill="currentColor" />
@@ -99,7 +98,7 @@ export default function Packages() {
                 </div>
                 <div className="relative flex flex-wrap gap-1">
                   {pkg.destinations.map((d) => (
-                    <span key={d} className="text-[10px] font-semibold text-white/75 bg-black/35 backdrop-blur-sm px-2 py-0.5 rounded-full font-body border border-white/10">
+                    <span key={d} className="text-[10px] font-semibold text-dark-800 bg-white/85 px-2 py-0.5 rounded-full font-body border border-gold/40">
                       {d}
                     </span>
                   ))}
@@ -107,13 +106,13 @@ export default function Packages() {
               </div>
 
               {/* Body */}
-              <div className="flex flex-col flex-1 p-5 bg-dark-800">
-                <h3 className="font-heading font-bold text-white text-xl mb-1">{pkg.nama}</h3>
-                <p className="text-white/45 text-xs font-body mb-4">{pkg.tagline}</p>
+              <div className="flex flex-col flex-1 p-5 bg-white">
+                <h3 className="font-heading font-bold text-dark-900 text-xl mb-1">{pkg.nama}</h3>
+                <p className="text-gray-500 text-xs font-body mb-4">{pkg.tagline}</p>
 
                 {/* Price */}
-                <div className="mb-4 pb-4 border-b border-white/8">
-                  <p className="text-white/40 text-[11px] uppercase tracking-widest font-body mb-0.5">{pkg.labelHarga}</p>
+                <div className="mb-4 pb-4 border-b border-gray-100">
+                  <p className="text-gray-400 text-[11px] uppercase tracking-widest font-body mb-0.5">{pkg.labelHarga}</p>
                   <p
                     className="font-heading font-bold leading-none"
                     style={{
@@ -142,8 +141,8 @@ export default function Packages() {
                   <div className="mb-3 space-y-1">
                     {pkg.hotels.map((h) => (
                       <div key={h.kota} className="flex gap-2 text-xs font-body">
-                        <span className="text-white/30 w-14 flex-shrink-0">{h.kota}</span>
-                        <span className="text-white/65">{h.nama}</span>
+                        <span className="text-gray-400 w-14 flex-shrink-0">{h.kota}</span>
+                        <span className="text-gray-600">{h.nama}</span>
                       </div>
                     ))}
                   </div>
@@ -153,7 +152,7 @@ export default function Packages() {
                 {pkg.extraHighlights && (
                   <div className="flex flex-wrap gap-2 mb-3">
                     {pkg.extraHighlights.map((h) => (
-                      <span key={h} className="text-[10px] font-semibold text-gold bg-gold/10 border border-gold/25 px-2 py-0.5 rounded-full font-body">
+                      <span key={h} className="text-[10px] font-semibold text-gold-dark bg-gold/10 border border-gold/30 px-2 py-0.5 rounded-full font-body">
                         {h}
                       </span>
                     ))}
@@ -162,7 +161,7 @@ export default function Packages() {
 
                 {/* Airlines */}
                 {pkg.airlines && (
-                  <p className="text-white/35 text-[11px] font-body mb-3">
+                  <p className="text-gray-400 text-[11px] font-body mb-3">
                     Maskapai: {pkg.airlines.join(' · ')}
                   </p>
                 )}
@@ -170,7 +169,7 @@ export default function Packages() {
                 {/* Includes */}
                 <ul className="space-y-1.5 mb-4 flex-1">
                   {pkg.includes.slice(0, 6).map((item) => (
-                    <li key={item} className="flex gap-2 text-[13px] text-white/70 font-body">
+                    <li key={item} className="flex gap-2 text-[13px] text-gray-700 font-body">
                       <CheckIcon />
                       <span>{item}</span>
                     </li>
@@ -179,9 +178,9 @@ export default function Packages() {
 
                 {/* Not includes */}
                 {pkg.notIncludes && (
-                  <ul className="space-y-1 mb-5 pt-3 border-t border-white/8">
+                  <ul className="space-y-1 mb-5 pt-3 border-t border-gray-100">
                     {pkg.notIncludes.map((item) => (
-                      <li key={item} className="flex gap-2 text-[12px] text-white/30 font-body">
+                      <li key={item} className="flex gap-2 text-[12px] text-gray-300 font-body">
                         <XIcon />
                         <span>{item}</span>
                       </li>
@@ -208,7 +207,7 @@ export default function Packages() {
           ))}
         </div>
 
-        <p className="text-center text-white/30 text-xs font-body mt-6">
+        <p className="text-center text-gray-400 text-xs font-body mt-6">
           * Harga dapat berubah sesuai kurs dan ketersediaan. Hubungi Maya untuk info terkini.
         </p>
       </div>

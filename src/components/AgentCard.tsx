@@ -10,13 +10,14 @@ function WhatsAppIcon() {
 
 export default function AgentCard() {
   return (
-    <section className="bg-dark-900 py-20 px-5 overflow-hidden">
+    <section className="bg-cream py-20 px-5 overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <div
           className="relative rounded-3xl overflow-hidden"
           style={{
-            background: 'linear-gradient(135deg, #141414 0%, #1E1E1E 100%)',
-            border: '1px solid rgba(212,175,55,0.2)',
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFDF5 100%)',
+            border: '1.5px solid rgba(212,175,55,0.35)',
+            boxShadow: '0 12px 60px rgba(212,175,55,0.12)',
           }}
           data-animate
         >
@@ -24,7 +25,7 @@ export default function AgentCard() {
           <div className="absolute inset-0 pattern-bg opacity-[0.04]" />
 
           {/* Gold corner ornament */}
-          <div className="absolute top-0 right-0 w-40 h-40 opacity-10">
+          <div className="absolute top-0 right-0 w-40 h-40 opacity-20">
             <svg viewBox="0 0 160 160" fill="none">
               <path d="M0 0L160 0L160 160" fill="none" stroke="#D4AF37" strokeWidth="1"/>
               <path d="M40 0L160 0L160 120" fill="none" stroke="#D4AF37" strokeWidth="0.5"/>
@@ -45,7 +46,8 @@ export default function AgentCard() {
                 <img
                   src="/assets/poster-hero.jpeg"
                   alt="Maya Meyzy — Branch Manager Banggai"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: '90% 5%', transform: 'scale(2.6)', transformOrigin: '90% 15%' }}
                 />
               </div>
               {/* Gold dot accent */}
@@ -59,13 +61,13 @@ export default function AgentCard() {
 
             {/* Info */}
             <div className="flex-1 text-center md:text-left">
-              <p className="text-gold/70 text-xs tracking-[0.35em] uppercase font-semibold font-body mb-3">
+              <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold font-body mb-3">
                 Konsultan Perjalanan Ibadah Anda
               </p>
 
-              <h2 className="font-heading font-bold text-white text-3xl md:text-4xl mb-1">Maya Meyzy</h2>
+              <h2 className="font-heading font-bold text-dark-900 text-3xl md:text-4xl mb-1">Maya Meyzy</h2>
               <p className="text-gold text-base font-semibold font-body mb-1">Branch Manager</p>
-              <p className="text-white/40 text-sm font-body mb-6">Isra Amanah Internasional — Cabang Banggai</p>
+              <p className="text-gray-400 text-sm font-body mb-6">Isra Amanah Internasional — Cabang Banggai</p>
 
               {/* Divider */}
               <div className="flex items-center gap-3 justify-center md:justify-start mb-6">
@@ -77,7 +79,7 @@ export default function AgentCard() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-white/65 text-base md:text-lg leading-relaxed font-body mb-8 italic max-w-xl">
+              <blockquote className="text-gray-600 text-base md:text-lg leading-relaxed font-body mb-8 italic max-w-xl">
                 "Saya siap membantu perjalanan ibadah Anda ke Baitullah & Al-Aqsa. Mari kita wujudkan niat suci Anda bersama — dengan hati yang ikhlas dan pelayanan yang amanah."
               </blockquote>
 
@@ -93,8 +95,8 @@ export default function AgentCard() {
               </a>
 
               {/* Phone */}
-              <p className="text-white/30 text-sm font-body mt-4">
-                WA: <span className="text-white/50 font-semibold">0857-5735-8682</span>
+              <p className="text-gray-400 text-sm font-body mt-4">
+                WA: <span className="text-gray-600 font-semibold">0857-5735-8682</span>
               </p>
             </div>
           </div>

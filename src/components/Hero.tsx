@@ -34,13 +34,13 @@ export default function Hero() {
           playsInline
           poster="/assets/poster-hero.jpeg"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: 'brightness(0.38)' }}
+          style={{ filter: 'brightness(0.44)' }}
         >
           <source src="/assets/video-promo.mp4" type="video/mp4" />
           <source src="/assets/video-promo2.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-transparent" />
         <div className="absolute inset-0 pattern-bg opacity-[0.05]" />
       </div>
 
