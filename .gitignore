@@ -24,8 +24,5 @@ dist-ssr
 .env.local
 .env.production.local
 
-# Large video files (host separately or add via Vercel/CDN)
-public/assets/*.mp4
-
 # TS build info
 *.tsbuildinfo
