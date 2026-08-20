@@ -35,12 +35,15 @@ function VideoCard({
       data-animate
     >
       <div className="relative w-full aspect-video bg-dark-800">
-        {/* Custom overlay — shown before play */}
+        {/* Custom overlay — shown before play. A real <button> so it is
+            reachable by keyboard and announced correctly. */}
         {!playing && (
-          <div
-            className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-5 cursor-pointer group"
-            style={{ background: 'linear-gradient(145deg, #0e0e0e 0%, #1a1400 60%, #0e0e0e 100%)' }}
+          <button
+            type="button"
             onClick={handlePlay}
+            aria-label={`Putar video: ${label}`}
+            className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-5 cursor-pointer group w-full"
+            style={{ background: 'linear-gradient(145deg, #0e0e0e 0%, #1a1400 60%, #0e0e0e 100%)' }}
           >
             {/* Subtle pattern */}
             <div className="absolute inset-0 pattern-bg opacity-[0.06]" />
@@ -48,7 +51,7 @@ function VideoCard({
             {/* Gold ring + play button */}
             <div className="relative">
               <div
-                className="w-18 h-18 rounded-full transition-all duration-300 ease-out group-hover:scale-110"
+                className="rounded-full transition-transform duration-300 ease-out group-hover:scale-110"
                 style={{
                   width: featured ? 72 : 60,
                   height: featured ? 72 : 60,
@@ -70,9 +73,9 @@ function VideoCard({
 
             {/* Label */}
             <div className="relative text-center px-6">
-              <p className="text-white/70 text-sm font-semibold font-body">{label}</p>
+              <p className="text-white/85 text-sm font-semibold font-body">{label}</p>
               {sublabel && (
-                <p className="text-white/35 text-xs font-body mt-1">{sublabel}</p>
+                <p className="text-white/60 text-xs font-body mt-1">{sublabel}</p>
               )}
             </div>
 
@@ -81,7 +84,7 @@ function VideoCard({
               className="absolute bottom-0 left-0 right-0 h-[2px]"
               style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.4), transparent)' }}
             />
-          </div>
+          </button>
         )}
 
         <video
@@ -113,13 +116,13 @@ function ComingSoonCard() {
       data-animate
     >
       <div className="absolute inset-0 pattern-bg opacity-[0.03]" />
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" className="text-gold/30 relative z-10">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" className="text-gold/60 relative z-10" aria-hidden="true">
         <circle cx="18" cy="18" r="16" stroke="currentColor" strokeWidth="1.5" />
         <path d="M14 12l10 6-10 6V12z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
       </svg>
       <div className="relative z-10">
-        <p className="text-white/35 text-sm font-semibold font-body">Konten video segera hadir</p>
-        <p className="text-white/20 text-xs font-body mt-1">Testimoni & highlight perjalanan jamaah</p>
+        <p className="text-white/70 text-sm font-semibold font-body">Konten video segera hadir</p>
+        <p className="text-white/55 text-xs font-body mt-1">Testimoni & highlight perjalanan jamaah</p>
       </div>
     </div>
   )
@@ -127,7 +130,7 @@ function ComingSoonCard() {
 
 export default function VideoSection() {
   return (
-    <section className="bg-dark-900 py-20 px-5">
+    <section id="galeri" className="bg-dark-900 py-20 px-5">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
           dark

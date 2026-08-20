@@ -61,13 +61,13 @@ export default function AgentCard() {
 
             {/* Info */}
             <div className="flex-1 text-center md:text-left">
-              <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold font-body mb-3">
+              <p className="text-goldink text-xs tracking-[0.35em] uppercase font-semibold font-body mb-3">
                 Konsultan Perjalanan Ibadah Anda
               </p>
 
-              <h2 className="font-heading font-bold text-dark-900 text-3xl md:text-4xl mb-1">Maya Meyzy</h2>
-              <p className="text-gold text-base font-semibold font-body mb-1">Branch Manager</p>
-              <p className="text-gray-400 text-sm font-body mb-6">Isra Amanah Internasional — Cabang Banggai</p>
+              <h2 className="font-heading font-bold text-ink text-3xl md:text-4xl mb-1">Maya Meyzy</h2>
+              <p className="text-goldink text-base font-semibold font-body mb-1">Branch Manager</p>
+              <p className="text-ink-subtle text-sm font-body mb-6">Isra Amanah Internasional — Cabang Banggai</p>
 
               {/* Divider */}
               <div className="flex items-center gap-3 justify-center md:justify-start mb-6">
@@ -79,7 +79,7 @@ export default function AgentCard() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-gray-600 text-base md:text-lg leading-relaxed font-body mb-8 italic max-w-xl">
+              <blockquote className="text-ink-muted text-base md:text-lg leading-relaxed font-body mb-8 italic max-w-xl">
                 "Saya siap membantu perjalanan ibadah Anda ke Baitullah & Al-Aqsa. Mari kita wujudkan niat suci Anda bersama — dengan hati yang ikhlas dan pelayanan yang amanah."
               </blockquote>
 
@@ -95,8 +95,8 @@ export default function AgentCard() {
               </a>
 
               {/* Phone */}
-              <p className="text-gray-400 text-sm font-body mt-4">
-                WA: <span className="text-gray-600 font-semibold">0857-5735-8682</span>
+              <p className="text-ink-subtle text-sm font-body mt-4">
+                WA: <span className="text-ink font-semibold">0857-5735-8682</span>
               </p>
             </div>
           </div>

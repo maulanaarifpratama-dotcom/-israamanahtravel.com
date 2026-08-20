@@ -56,8 +56,8 @@ export default function Hero() {
           </div>
           <div className="text-left leading-tight">
             <p className="text-gold font-heading font-bold text-xl">ISRA AMANAH</p>
-            <p className="text-gold/80 text-[11px] tracking-[0.25em] uppercase font-body">Internasional</p>
-            <p className="text-white/45 text-[10px] tracking-[0.3em] uppercase font-body">Cabang Banggai</p>
+            <p className="text-gold text-[11px] tracking-[0.25em] uppercase font-body">Internasional</p>
+            <p className="text-white/70 text-[10px] tracking-[0.3em] uppercase font-body">Cabang Banggai</p>
           </div>
         </div>
 
@@ -79,7 +79,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <p
-          className="text-white/65 text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-10 font-body animate-float-up"
+          className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-10 font-body animate-float-up"
           style={{ animationDelay: '260ms' }}
         >
           Umroh bukan hanya perjalanan, tapi panggilan hati untuk mendekatkan diri kepada Allah SWT.
@@ -95,7 +95,7 @@ export default function Hero() {
             <WhatsAppIcon />
             Hubungi Maya Sekarang
           </a>
-          <a href="#paket" className="btn-outline-gold w-full sm:w-auto">
+          <a href="#paket" className="btn-outline-gold on-dark w-full sm:w-auto">
             Lihat Paket Umroh
           </a>
         </div>
@@ -109,7 +109,7 @@ export default function Hero() {
             <span
               key={b}
               className="text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full font-body"
-              style={{ border: '1px solid rgba(212,175,55,0.35)', color: 'rgba(212,175,55,0.8)', background: 'rgba(212,175,55,0.07)' }}
+              style={{ border: '1px solid rgba(212,175,55,0.45)', color: '#E8C55A', background: 'rgba(212,175,55,0.1)' }}
             >
               {b}
             </span>
@@ -119,7 +119,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5">
-        <span className="text-white/30 text-[9px] tracking-[0.35em] uppercase font-body">Scroll</span>
+        <span className="text-white/60 text-[9px] tracking-[0.35em] uppercase font-body">Scroll</span>
         <div className="w-[1.5px] h-8 bg-gradient-to-b from-gold/40 to-transparent animate-scroll" />
       </div>
     </section>

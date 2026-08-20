@@ -30,14 +30,6 @@
   background-size: 60px 60px;
 }
 
-/* ── Gold text gradient ── */
-.text-gold-gradient {
-  background: linear-gradient(135deg, #C9A227 0%, #F5DD81 50%, #C9A227 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* ── Gold border with glow ── */
 .gold-border {
   border: 1px solid rgba(212, 175, 55, 0.4);
@@ -73,13 +65,16 @@
 [data-stagger] > *:nth-child(8)  { transition-delay: 420ms; }
 
 /* ── CTA Button Styles ── */
+/* Deepened from WhatsApp's #25D366 → #128C7E. White 16px bold text measured
+   only 1.9:1 against the light stop; this range gives 4.6:1 → 5.9:1 while
+   still reading unmistakably as the WhatsApp green. */
 .btn-wa {
   @apply inline-flex items-center justify-center gap-2.5 font-bold px-7 py-4 rounded-full text-base text-white transition-all duration-200;
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+  background: linear-gradient(135deg, #12855F 0%, #0C6E5C 100%);
+  box-shadow: 0 8px 32px rgba(18, 133, 95, 0.32);
   transform: scale(1);
 }
-.btn-wa:hover  { box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4); filter: brightness(1.05); }
+.btn-wa:hover  { box-shadow: 0 12px 40px rgba(18, 133, 95, 0.42); filter: brightness(1.08); }
 .btn-wa:active { transform: scale(0.97); }
 
 .btn-gold {
@@ -92,15 +87,45 @@
 .btn-gold:hover  { box-shadow: 0 12px 40px rgba(212, 175, 55, 0.45); filter: brightness(1.05); }
 .btn-gold:active { transform: scale(0.97); }
 
+/* Default outline button targets LIGHT backgrounds (cards, cream sections).
+   #7A6117 = 5.7:1 on white — the #D4AF37 it replaced was only 2.0:1. */
 .btn-outline-gold {
   @apply inline-flex items-center justify-center gap-2.5 font-semibold px-7 py-4 rounded-full text-base transition-all duration-200;
-  border: 1.5px solid rgba(212, 175, 55, 0.6);
-  color: #D4AF37;
+  border: 1.5px solid rgba(212, 175, 55, 0.75);
+  color: #7A6117;
   background: transparent;
   transform: scale(1);
 }
-.btn-outline-gold:hover  { border-color: #D4AF37; background: rgba(212, 175, 55, 0.08); }
+.btn-outline-gold:hover  { border-color: #B8891E; background: rgba(212, 175, 55, 0.1); }
 .btn-outline-gold:active { transform: scale(0.97); }
+
+/* Same button over dark/video backgrounds, where bright gold is the readable choice. */
+.btn-outline-gold.on-dark {
+  border-color: rgba(212, 175, 55, 0.6);
+  color: #E8C55A;
+}
+.btn-outline-gold.on-dark:hover { border-color: #D4AF37; background: rgba(212, 175, 55, 0.1); }
+
+/* ── Price display ──
+   Solid rather than gradient-clipped: the old #C9A227→#F5DD81 clip measured
+   1.4:1 at its light stop, and gradient text renders muddy at this size.
+   #7A6117 gives a clean 5.7:1. */
+.price-gold {
+  color: #7A6117;
+}
+
+/* ── Focus visibility (WCAG 2.4.7) ── */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid #B8891E;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.bg-dark-900 :where(a, button, [tabindex]):focus-visible,
+.bg-dark-800 :where(a, button, [tabindex]):focus-visible,
+footer :where(a, button, [tabindex]):focus-visible,
+section:has(video) :where(a, button, [tabindex]):focus-visible {
+  outline-color: #F5DD81;
+}
 
 /* ── Accordion ── */
 .accordion-content {
@@ -126,4 +151,8 @@
     transform: none;
   }
   .btn-wa, .btn-gold, .btn-outline-gold { transition: opacity 150ms ease; }
+  /* Kill looping decorative motion entirely, not just the entrance transitions. */
+  .animate-ping,
+  .animate-wa-ping,
+  .animate-scroll { animation: none !important; }
 }

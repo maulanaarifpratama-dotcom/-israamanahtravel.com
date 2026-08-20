@@ -33,6 +33,18 @@ const config: Config = {
           dark:    '#F0E4C4',
           darker:  '#E8D9AA',
         },
+        /* Semantic text tokens — all AA-verified on white (#FFF) and cream (#FAF5E4) */
+        ink: {
+          DEFAULT: '#111111', // body/heading on light — 18.9:1
+          muted:   '#4B5563', // secondary text     —  7.0:1
+          subtle:  '#5F6774', // meta / captions    —  5.3:1
+          faint:   '#6B7280', // lowest allowed     —  4.8:1
+        },
+        /* Gold that is actually readable as text on light backgrounds */
+        goldink: {
+          DEFAULT: '#7A6117', // small text  — 5.7:1 on white, 5.2:1 on cream
+          strong:  '#9B7D1C', // large text  — 3.9:1 (AA large only)
+        },
       },
       fontFamily: {
         heading: ['"Playfair Display"', 'Georgia', 'serif'],

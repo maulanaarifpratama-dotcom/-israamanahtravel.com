@@ -79,18 +79,18 @@ export default function Tips() {
                     style={{
                       background: isOpen
                         ? 'linear-gradient(135deg, #C9A227, #F5DD81)'
-                        : 'rgba(212,175,55,0.1)',
-                      color: isOpen ? '#111' : '#C9A227',
+                        : 'rgba(212,175,55,0.16)',
+                      color: isOpen ? '#111' : '#7A6117',
                     }}
                   >
                     {tip.num}
                   </span>
-                  <span className="flex-1 font-semibold text-dark-800 text-sm md:text-base font-body pr-2">
+                  <span className="flex-1 font-semibold text-ink text-sm md:text-base font-body pr-2">
                     {tip.title}
                   </span>
                   <svg
-                    width="18" height="18" viewBox="0 0 18 18"
-                    className={`flex-shrink-0 text-gold/60 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                    width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"
+                    className={`flex-shrink-0 text-goldink transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                   >
                     <path d="M4 7l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                   </svg>
@@ -98,7 +98,7 @@ export default function Tips() {
 
                 <div className={`accordion-content ${isOpen ? 'open' : ''}`}>
                   <div className="accordion-inner">
-                    <p className="px-5 pb-5 pt-0 text-dark-700/65 text-sm leading-relaxed font-body pl-[4.25rem]">
+                    <p className="px-5 pb-5 pt-0 text-ink-muted text-sm leading-relaxed font-body pl-[4.25rem]">
                       {tip.body}
                     </p>
                   </div>

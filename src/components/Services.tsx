@@ -1,15 +1,18 @@
 function SectionTitle({ label, title, sub, dark = false }: { label: string; title: string; sub?: string; dark?: boolean }) {
   return (
     <div className="text-center mb-12" data-animate>
-      <p className={`text-xs tracking-[0.35em] uppercase font-semibold mb-3 font-body ${dark ? 'text-gold/70' : 'text-gold-600'}`}>{label}</p>
-      <h2 className={`font-heading font-bold leading-tight ${dark ? 'text-white' : 'text-dark-900'}`}
+      {/* Eyebrow is 12px, so it needs the full 4.5:1 — goldink hits 5.7:1 where gold-600 was 3.1:1 */}
+      <p className={`text-xs tracking-[0.35em] uppercase font-semibold mb-3 font-body ${dark ? 'text-gold-200' : 'text-goldink'}`}>
+        {label}
+      </p>
+      <h2 className={`font-heading font-bold leading-tight ${dark ? 'text-white' : 'text-ink'}`}
         style={{ fontSize: 'clamp(1.7rem, 4vw, 2.5rem)' }}>
         {title}
       </h2>
-      {sub && <p className={`mt-3 text-base max-w-xl mx-auto font-body ${dark ? 'text-white/50' : 'text-dark-600/70'}`}>{sub}</p>}
+      {sub && <p className={`mt-3 text-base max-w-xl mx-auto font-body ${dark ? 'text-white/70' : 'text-ink-muted'}`}>{sub}</p>}
       <div className="flex items-center justify-center gap-3 mt-5">
         <div className={`h-px w-12 ${dark ? 'bg-gold/30' : 'bg-gold/40'}`} />
-        <svg width="16" height="16" viewBox="0 0 16 16" className="text-gold">
+        <svg width="16" height="16" viewBox="0 0 16 16" className="text-gold" aria-hidden="true">
           <path d="M8 0L16 8L8 16L0 8Z" fill="currentColor" opacity="0.9"/>
           <path d="M8 4L12 8L8 12L4 8Z" fill="currentColor" opacity="0.4"/>
         </svg>
@@ -22,7 +25,7 @@ function SectionTitle({ label, title, sub, dark = false }: { label: string; titl
 const services = [
   {
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
         <rect x="6" y="8" width="20" height="18" rx="1" stroke="currentColor" strokeWidth="1.5"/>
         <rect x="10" y="4" width="12" height="6" rx="1" stroke="currentColor" strokeWidth="1.5"/>
         <line x1="16" y1="8" x2="16" y2="26" stroke="currentColor" strokeWidth="1.5"/>
@@ -34,7 +37,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
         <path d="M16 4L20 12L28 13L22 19L23.5 27L16 23L8.5 27L10 19L4 13L12 12L16 4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
       </svg>
     ),
@@ -43,7 +46,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
         <rect x="4" y="8" width="24" height="16" rx="2" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M8 12h4M8 16h8M8 20h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
         <path d="M20 12l4 0M22 16l2 0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -54,7 +57,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
         <rect x="4" y="14" width="24" height="14" rx="1" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M8 14V10a8 8 0 0116 0v4" stroke="currentColor" strokeWidth="1.5"/>
         <circle cx="16" cy="21" r="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -65,7 +68,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
         <rect x="2" y="14" width="28" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M6 14V12a2 2 0 012-2h16a2 2 0 012 2v2" stroke="currentColor" strokeWidth="1.5"/>
         <circle cx="8" cy="26" r="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -77,7 +80,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
         <path d="M16 4C11 4 7 8 7 12c0 6 9 16 9 16s9-10 9-16c0-4-4-8-9-8z" stroke="currentColor" strokeWidth="1.5"/>
         <circle cx="16" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
@@ -87,7 +90,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
         <circle cx="16" cy="10" r="4" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
         <path d="M20 14l4-4M20 22l4 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -98,7 +101,7 @@ const services = [
   },
   {
     icon: (
-      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
+      <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8" aria-hidden="true">
         <rect x="8" y="6" width="16" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M12 12h8M12 16h8M12 20h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
         <path d="M8 10h2M8 16h2M8 22h2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
@@ -113,7 +116,7 @@ export { SectionTitle }
 
 export default function Services() {
   return (
-    <section className="bg-cream py-20 px-5">
+    <section id="layanan" className="bg-cream py-20 px-5">
       <div className="max-w-5xl mx-auto">
         <SectionTitle
           label="Apa yang Kami Tawarkan"
@@ -132,12 +135,12 @@ export default function Services() {
               data-animate
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="w-14 h-14 mx-auto mb-3 rounded-xl flex items-center justify-center text-gold transition-all duration-300 group-hover:bg-dark-900 group-hover:text-gold"
-                style={{ background: 'rgba(212,175,55,0.1)' }}>
+              <div className="w-14 h-14 mx-auto mb-3 rounded-xl flex items-center justify-center text-goldink transition-all duration-300 group-hover:bg-dark-900 group-hover:text-gold"
+                style={{ background: 'rgba(212,175,55,0.12)' }}>
                 {s.icon}
               </div>
-              <p className="font-semibold text-dark-900 text-sm leading-snug font-body">{s.nama}</p>
-              <p className="text-dark-600/60 text-xs mt-1 font-body">{s.desc}</p>
+              <p className="font-semibold text-ink text-sm leading-snug font-body">{s.nama}</p>
+              <p className="text-ink-subtle text-xs mt-1 font-body leading-snug">{s.desc}</p>
             </div>
           ))}
         </div>

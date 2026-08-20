@@ -21,13 +21,13 @@ export default function FloatingWA() {
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
       style={{
-        background: 'linear-gradient(135deg, #25D366, #128C7E)',
+        background: 'linear-gradient(135deg, #12855F, #0C6E5C)',
         padding: '12px 20px 12px 14px',
-        boxShadow: '0 8px 32px rgba(37,211,102,0.4)',
+        boxShadow: '0 8px 32px rgba(18,133,95,0.45)',
       }}
     >
       {/* Ping ring */}
-      <span className="absolute inset-0 rounded-full animate-wa-ping" style={{ background: 'rgba(37,211,102,0.35)' }} />
+      <span className="absolute inset-0 rounded-full animate-wa-ping" style={{ background: 'rgba(37,211,102,0.4)' }} />
 
       {/* WA Icon */}
       <svg width="24" height="24" viewBox="0 0 24 24" fill="white" className="relative flex-shrink-0">

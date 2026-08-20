@@ -26,8 +26,8 @@ const socials = [
     handle: 'Isra Tour',
     href: 'https://facebook.com',
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 8.5V6.8c0-.9.4-1.3 1.3-1.3H17V2.6h-2.4c-2.6 0-3.9 1.4-3.9 3.9v2H9v3h1.7v9.9h3.3v-9.9h2.4l.4-3H14z" />
       </svg>
     ),
   },
@@ -36,8 +36,9 @@ const socials = [
     handle: '@isratour_id',
     href: 'https://tiktok.com/@isratour_id',
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.2 2.5v11.9a3.6 3.6 0 11-3.6-3.6c.35 0 .68.05 1 .14" />
+        <path d="M14.2 2.5a5.1 5.1 0 005.1 5.1" />
       </svg>
     ),
   },
@@ -59,10 +60,10 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-gold font-heading font-bold text-base leading-tight">ISRA AMANAH</p>
-              <p className="text-white/40 text-[10px] tracking-widest uppercase font-body">Internasional</p>
+              <p className="text-white/65 text-[10px] tracking-widest uppercase font-body">Internasional</p>
             </div>
           </div>
-          <p className="text-white/40 text-sm leading-relaxed font-body">
+          <p className="text-white/70 text-sm leading-relaxed font-body">
             PT Isra Amanah Internasional — Cabang Banggai.<br />
             Melayani Sepenuh Hati dalam setiap perjalanan ibadah.
           </p>
@@ -74,14 +75,14 @@ export default function Footer() {
           <h4 className="text-white font-semibold text-sm mb-4 font-body uppercase tracking-wider">Kontak</h4>
           <div className="space-y-3">
             <div>
-              <p className="text-white/35 text-xs font-body mb-0.5">Branch Manager Banggai</p>
+              <p className="text-white/65 text-xs font-body mb-0.5">Branch Manager Banggai</p>
               <p className="text-white text-sm font-semibold font-body">Maya Meyzy</p>
             </div>
             <a
               href={getWALink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors text-sm font-semibold font-body"
+              className="inline-flex items-center gap-2 min-h-[44px] text-green-400 hover:text-green-300 transition-colors text-sm font-semibold font-body"
             >
               <WhatsAppIcon />
               0857-5735-8682
@@ -94,8 +95,8 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-white/40 hover:text-gold transition-all duration-200 hover:scale-110 active:scale-95"
-                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  className="w-11 h-11 rounded-full flex items-center justify-center text-white/75 hover:text-gold transition-all duration-200 hover:scale-110 active:scale-95"
+                  style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.14)' }}
                 >
                   {s.icon}
                 </a>
@@ -103,7 +104,7 @@ export default function Footer() {
             </div>
             <div className="pt-1 space-y-1">
               {socials.map((s) => (
-                <p key={s.handle} className="text-white/30 text-xs font-body">{s.handle}</p>
+                <p key={s.handle} className="text-white/60 text-xs font-body">{s.handle}</p>
               ))}
             </div>
           </div>
@@ -118,24 +119,36 @@ export default function Footer() {
               { label: 'PIHK', sk: 'SK. 91201027925540003' },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-2">
-                <svg width="14" height="14" viewBox="0 0 14 14" className="flex-shrink-0 text-gold/60 mt-0.5">
+                <svg width="14" height="14" viewBox="0 0 14 14" className="flex-shrink-0 text-gold mt-0.5" aria-hidden="true">
                   <circle cx="7" cy="7" r="6.5" stroke="currentColor" strokeWidth="1" fill="none"/>
-                  <path d="M4 7l2 2 4-4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4 7l2 2 4-4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                 </svg>
                 <div>
-                  <p className="text-white/60 text-xs font-semibold font-body">Izin {item.label} Resmi</p>
-                  <p className="text-white/30 text-[11px] font-body">{item.sk}</p>
+                  <p className="text-white/80 text-xs font-semibold font-body">Izin {item.label} Resmi</p>
+                  <p className="text-white/60 text-[11px] font-body">{item.sk}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <nav>
-            <h4 className="text-white/40 text-xs uppercase tracking-wider font-body mb-3">Navigasi</h4>
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
-              {['#paket', '#layanan', '#tentang'].map((href) => (
-                <a key={href} href={href} className="text-white/40 hover:text-gold text-xs font-body transition-colors capitalize">
-                  {href.replace('#', '')}
+          <nav aria-label="Navigasi footer">
+            <h4 className="text-white/65 text-xs uppercase tracking-wider font-body mb-3">Navigasi</h4>
+            <div className="flex flex-wrap gap-x-3 -ml-2">
+              {/* Every target below is a real id in the DOM — the previous
+                  #tentang link pointed at a section that does not exist.
+                  min-h-[44px] meets the touch-target minimum. */}
+              {[
+                { href: '#layanan', label: 'Layanan' },
+                { href: '#paket', label: 'Paket' },
+                { href: '#galeri', label: 'Galeri' },
+                { href: '#itinerary', label: 'Itinerary' },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="inline-flex items-center min-h-[44px] px-2 text-white/70 hover:text-gold text-xs font-body transition-colors"
+                >
+                  {item.label}
                 </a>
               ))}
             </div>
@@ -144,15 +157,17 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
+      {/* Extra bottom padding keeps the fixed WhatsApp button from sitting on
+          top of the legal line. */}
       <div
-        className="border-t border-white/5 px-5 py-4"
+        className="border-t border-white/5 px-5 pt-4 pb-24 sm:pb-20"
         style={{ background: 'rgba(0,0,0,0.3)' }}
       >
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-          <p className="text-white/25 text-xs font-body">
+          <p className="text-white/60 text-xs font-body">
             © 2026 PT Isra Amanah Internasional. Hak cipta dilindungi.
           </p>
-          <p className="text-white/20 text-xs font-body">
+          <p className="text-white/55 text-xs font-body">
             PPIU: SK. 91201027925540002 · PIHK: SK. 91201027925540003
           </p>
         </div>
