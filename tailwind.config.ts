@@ -47,9 +47,13 @@ const config: Config = {
         },
       },
       fontFamily: {
-        heading: ['"Playfair Display"', 'Georgia', 'serif'],
-        script:  ['"Dancing Script"', 'cursive'],
-        body:    ['"Plus Jakarta Sans"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        /* Cormorant Garamond replaces Playfair Display: warmer, Garamond-derived,
+           and not the default "luxury" face on every other site. */
+        heading: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        /* `script` now maps to the same serif — used in italic. Dancing Script
+           was a wedding-invite default that undercut the brand on the hero. */
+        script:  ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body:    ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gold-gradient':  'linear-gradient(135deg, #C9A227 0%, #F5DD81 50%, #C9A227 100%)',

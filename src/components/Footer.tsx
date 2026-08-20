@@ -59,7 +59,7 @@ export default function Footer() {
               <img src="/assets/logo.jpeg" alt="Isra Amanah" className="w-full h-full object-contain p-1" />
             </div>
             <div>
-              <p className="text-gold font-heading font-bold text-base leading-tight">ISRA AMANAH</p>
+              <p className="text-gold font-heading font-semibold text-[1.2rem] tracking-[0.06em] leading-tight">ISRA AMANAH</p>
               <p className="text-white/65 text-[10px] tracking-widest uppercase font-body">Internasional</p>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function Footer() {
             PT Isra Amanah Internasional — Cabang Banggai.<br />
             Melayani Sepenuh Hati dalam setiap perjalanan ibadah.
           </p>
-          <p className="text-gold font-script text-xl mt-4">Umroh & Haji Mabrur</p>
+          <p className="text-gold font-heading italic font-medium text-2xl mt-4">Umroh & Haji Mabrur</p>
         </div>
 
         {/* Contact */}

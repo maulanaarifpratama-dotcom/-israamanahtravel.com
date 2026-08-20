@@ -81,7 +81,7 @@ export default function WhyUs() {
               </p>
 
               {/* Title */}
-              <h3 className="font-heading font-bold text-ink text-2xl mb-1">{p.title}</h3>
+              <h3 className="font-heading font-semibold text-ink text-[1.9rem] leading-tight mb-1">{p.title}</h3>
               <p className="text-goldink text-sm font-semibold font-body mb-3">{p.subtitle}</p>
 
               {/* Divider */}

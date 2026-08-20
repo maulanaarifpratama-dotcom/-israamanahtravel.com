@@ -65,7 +65,7 @@ export default function AgentCard() {
                 Konsultan Perjalanan Ibadah Anda
               </p>
 
-              <h2 className="font-heading font-bold text-ink text-3xl md:text-4xl mb-1">Maya Meyzy</h2>
+              <h2 className="font-heading font-semibold text-ink text-[2.4rem] md:text-[3rem] leading-[1.05] mb-1">Maya Meyzy</h2>
               <p className="text-goldink text-base font-semibold font-body mb-1">Branch Manager</p>
               <p className="text-ink-subtle text-sm font-body mb-6">Isra Amanah Internasional — Cabang Banggai</p>
 

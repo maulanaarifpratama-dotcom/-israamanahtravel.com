@@ -15,13 +15,32 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+    font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Cormorant Garamond is a Garamond: small x-height and open default
+     tracking. Display sizes need negative tracking to hold together, and
+     the italic accent needs a touch of positive tracking so it doesn't
+     collide with itself. */
+  .font-heading {
+    letter-spacing: -0.015em;
+  }
+  .font-script,
+  .font-heading.italic,
+  em.font-heading {
+    letter-spacing: 0.005em;
   }
   body {
     @apply bg-dark-900 text-white antialiased;
     overflow-x: hidden;
   }
   * { box-sizing: border-box; }
+
+  /* Progressive line-breaking: balance short headings so they don't leave a
+     single orphaned word, and let paragraphs avoid orphans too. Both degrade
+     to normal wrapping where unsupported — no hardcoded breaks. */
+  h1, h2, h3, h4 { text-wrap: balance; }
+  p, blockquote, li { text-wrap: pretty; }
 }
 
 /* ── Islamic geometric background pattern ── */

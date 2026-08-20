@@ -53,8 +53,8 @@ export default function Downloads() {
         <div className="text-center mb-12" data-animate>
           <p className="text-goldink text-xs tracking-[0.35em] uppercase font-semibold font-body mb-3">Informasi Perjalanan</p>
           <h2
-            className="font-heading font-bold text-ink leading-tight"
-            style={{ fontSize: 'clamp(1.7rem, 4vw, 2.5rem)' }}
+            className="font-heading font-semibold text-ink leading-[1.12]"
+            style={{ fontSize: 'clamp(2rem, 4.6vw, 3rem)' }}
           >
             Download Itinerary Lengkap
           </h2>
@@ -91,7 +91,7 @@ export default function Downloads() {
                   <PdfIcon />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-ink text-lg leading-snug">{pdf.title}</h3>
+                  <h3 className="font-body font-extrabold text-ink text-[1.05rem] leading-snug tracking-[-0.01em]">{pdf.title}</h3>
                   <p className="text-goldink text-xs font-semibold font-body mt-0.5">{pdf.subtitle}</p>
                   <p className="text-ink-muted text-sm font-body mt-2 leading-snug">{pdf.desc}</p>
                 </div>

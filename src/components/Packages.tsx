@@ -172,7 +172,11 @@ export default function Packages() {
                     ))}
                   </div>
 
-                  <h3 className="font-heading font-bold text-ink text-xl leading-snug mb-1">{pkg.nama}</h3>
+                  {/* Sans, not the serif: Cormorant's small x-height makes a
+                      20px title read weak. Serif is reserved for display sizes. */}
+                  <h3 className="font-body font-extrabold text-ink text-[1.3rem] leading-snug tracking-[-0.015em] mb-1">
+                    {pkg.nama}
+                  </h3>
                   <p className="text-ink-subtle text-xs font-body mb-4">{pkg.tagline}</p>
 
                   {/* Price */}
@@ -182,7 +186,7 @@ export default function Packages() {
                     </p>
                     <p
                       className="price-gold font-heading font-bold leading-none"
-                      style={{ fontSize: 'clamp(1.6rem, 4vw, 2rem)' }}
+                      style={{ fontSize: 'clamp(1.9rem, 4.6vw, 2.4rem)' }}
                     >
                       {formatRupiah(pkg.hargaMulai)}
                     </p>

@@ -5,8 +5,8 @@ function SectionTitle({ label, title, sub, dark = false }: { label: string; titl
       <p className={`text-xs tracking-[0.35em] uppercase font-semibold mb-3 font-body ${dark ? 'text-gold-200' : 'text-goldink'}`}>
         {label}
       </p>
-      <h2 className={`font-heading font-bold leading-tight ${dark ? 'text-white' : 'text-ink'}`}
-        style={{ fontSize: 'clamp(1.7rem, 4vw, 2.5rem)' }}>
+      <h2 className={`font-heading font-semibold leading-[1.12] ${dark ? 'text-white' : 'text-ink'}`}
+        style={{ fontSize: 'clamp(2rem, 4.6vw, 3rem)' }}>
         {title}
       </h2>
       {sub && <p className={`mt-3 text-base max-w-xl mx-auto font-body ${dark ? 'text-white/70' : 'text-ink-muted'}`}>{sub}</p>}

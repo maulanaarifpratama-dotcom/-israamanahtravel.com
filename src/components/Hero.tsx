@@ -41,6 +41,15 @@ export default function Hero() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-transparent" />
+        {/* Centre scrim: the video is always moving, so the headline cannot rely
+            on any single frame being dark enough behind it. */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 78% 62% at 50% 44%, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.42) 45%, rgba(0,0,0,0) 100%)',
+          }}
+        />
         <div className="absolute inset-0 pattern-bg opacity-[0.05]" />
       </div>
 
@@ -55,7 +64,7 @@ export default function Hero() {
             <img src="/assets/logo.jpeg" alt="Isra Amanah Logo" className="w-full h-full object-contain p-1" />
           </div>
           <div className="text-left leading-tight">
-            <p className="text-gold font-heading font-bold text-xl">ISRA AMANAH</p>
+            <p className="text-gold font-heading font-semibold text-[1.45rem] tracking-[0.06em] leading-none">ISRA AMANAH</p>
             <p className="text-gold text-[11px] tracking-[0.25em] uppercase font-body">Internasional</p>
             <p className="text-white/70 text-[10px] tracking-[0.3em] uppercase font-body">Cabang Banggai</p>
           </div>
@@ -65,16 +74,16 @@ export default function Hero() {
 
         {/* Headline */}
         <h1
-          className="font-heading font-bold text-white leading-tight mb-1 animate-float-up"
-          style={{ fontSize: 'clamp(2.2rem, 7vw, 4.5rem)', animationDelay: '100ms' }}
+          className="font-heading font-semibold text-white leading-[1.06] mb-0.5 animate-float-up"
+          style={{ fontSize: 'clamp(2.6rem, 8vw, 5.2rem)', animationDelay: '100ms' }}
         >
           Wujudkan Niat Suci
         </h1>
         <h2
-          className="font-script text-gold leading-tight mb-6 animate-float-up"
-          style={{ fontSize: 'clamp(2.4rem, 7.5vw, 5rem)', animationDelay: '180ms' }}
+          className="font-heading italic font-medium text-gold leading-[1.1] mb-7 animate-float-up"
+          style={{ fontSize: 'clamp(2.5rem, 7.8vw, 5rem)', animationDelay: '180ms' }}
         >
-          ke Baitullah & Al-Aqsa
+          ke Baitullah &amp; Al-Aqsa
         </h2>
 
         {/* Tagline */}
