@@ -36,6 +36,12 @@ function WhatsAppIcon() {
   )
 }
 
+const CARD_GRADIENTS = [
+  'linear-gradient(145deg, #1C0E00 0%, #2D1A00 55%, #1C0E00 100%)',
+  'linear-gradient(145deg, #05101F 0%, #0C1D3B 55%, #05101F 100%)',
+  'linear-gradient(145deg, #1C0808 0%, #2D1010 55%, #1C0808 100%)',
+]
+
 export default function Packages() {
   return (
     <section id="paket" className="bg-dark-900 py-20 px-5">
@@ -57,7 +63,7 @@ export default function Packages() {
                   : 'gold-border'
               }`}
               data-animate
-              style={{ animationDelay: `${i * 100}ms` }}
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Badge */}
               {pkg.badge && (
@@ -77,18 +83,26 @@ export default function Packages() {
                 </div>
               )}
 
-              {/* Image header */}
-              <div className="relative h-44 overflow-hidden">
-                <img src={pkg.gambar} alt={pkg.nama} className="w-full h-full object-cover object-top" />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent" />
-                <div className="absolute bottom-3 left-4">
-                  <div className="flex flex-wrap gap-1">
-                    {pkg.destinations.map((d) => (
-                      <span key={d} className="text-[10px] font-semibold text-white/80 bg-black/40 backdrop-blur-sm px-2 py-0.5 rounded-full font-body border border-white/10">
-                        {d}
-                      </span>
-                    ))}
-                  </div>
+              {/* Card header — pure CSS gradient, no poster text clash */}
+              <div
+                className="relative h-40 overflow-hidden flex flex-col justify-end px-4 pb-3"
+                style={{ background: CARD_GRADIENTS[i] }}
+              >
+                <div className="absolute inset-0 pattern-bg opacity-[0.1]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-transparent to-transparent" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <svg width="72" height="72" viewBox="0 0 72 72" className="text-gold opacity-[0.07]">
+                    <polygon points="36,2 70,36 36,70 2,36" fill="currentColor" />
+                    <polygon points="36,16 56,36 36,56 16,36" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                    <polygon points="36,28 44,36 36,44 28,36" fill="currentColor" />
+                  </svg>
+                </div>
+                <div className="relative flex flex-wrap gap-1">
+                  {pkg.destinations.map((d) => (
+                    <span key={d} className="text-[10px] font-semibold text-white/75 bg-black/35 backdrop-blur-sm px-2 py-0.5 rounded-full font-body border border-white/10">
+                      {d}
+                    </span>
+                  ))}
                 </div>
               </div>
 

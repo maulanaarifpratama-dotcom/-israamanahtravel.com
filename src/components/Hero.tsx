@@ -25,15 +25,23 @@ function WhatsAppIcon() {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src="/assets/poster-services.jpeg"
-          alt="Kaabah dan Masjidil Aqsa"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-black/90" />
-        <div className="absolute inset-0 pattern-bg opacity-[0.06]" />
+      {/* Video Background */}
+      <div className="absolute inset-0 bg-[#0a0a0a]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/assets/poster-hero.jpeg"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ filter: 'brightness(0.38)' }}
+        >
+          <source src="/assets/video-promo.mp4" type="video/mp4" />
+          <source src="/assets/video-promo2.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/15" />
+        <div className="absolute inset-0 pattern-bg opacity-[0.05]" />
       </div>
 
       {/* Content */}

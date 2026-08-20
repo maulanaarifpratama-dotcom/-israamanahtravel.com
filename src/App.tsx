@@ -22,7 +22,7 @@ export default function App() {
           }
         })
       },
-      { threshold: 0.08, rootMargin: '-40px 0px' },
+      { threshold: 0.05 },
     )
     document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
