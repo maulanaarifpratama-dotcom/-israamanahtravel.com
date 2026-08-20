@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom CSS Variables ── */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --gold: #D4AF37;
+  --gold-dark: #C9A227;
+  --gold-light: #F5DD81;
+}
+
+/* ── Base ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+  body {
+    @apply bg-dark-900 text-white antialiased;
+    overflow-x: hidden;
+  }
+  * { box-sizing: border-box; }
+}
+
+/* ── Islamic geometric background pattern ── */
+.pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23D4AF37' stroke-width='0.8' opacity='0.4'/%3E%3Cpath d='M30 8L52 30L30 52L8 30Z' fill='none' stroke='%23D4AF37' stroke-width='0.4' opacity='0.3'/%3E%3Crect x='22' y='22' width='16' height='16' fill='none' stroke='%23D4AF37' stroke-width='0.3' opacity='0.3' transform='rotate(45 30 30)'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+/* ── Gold text gradient ── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A227 0%, #F5DD81 50%, #C9A227 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Gold border with glow ── */
+.gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.03);
+}
+.gold-border:hover {
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.07), 0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+/* ── Scroll-triggered animations ── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+}
+[data-animate][data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for grid children */
+[data-stagger] > *:nth-child(1)  { transition-delay: 0ms; }
+[data-stagger] > *:nth-child(2)  { transition-delay: 60ms; }
+[data-stagger] > *:nth-child(3)  { transition-delay: 120ms; }
+[data-stagger] > *:nth-child(4)  { transition-delay: 180ms; }
+[data-stagger] > *:nth-child(5)  { transition-delay: 240ms; }
+[data-stagger] > *:nth-child(6)  { transition-delay: 300ms; }
+[data-stagger] > *:nth-child(7)  { transition-delay: 360ms; }
+[data-stagger] > *:nth-child(8)  { transition-delay: 420ms; }
+
+/* ── CTA Button Styles ── */
+.btn-wa {
+  @apply inline-flex items-center justify-center gap-2.5 font-bold px-7 py-4 rounded-full text-base text-white transition-all duration-200;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+  transform: scale(1);
+}
+.btn-wa:hover  { box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4); filter: brightness(1.05); }
+.btn-wa:active { transform: scale(0.97); }
+
+.btn-gold {
+  @apply inline-flex items-center justify-center gap-2.5 font-bold px-7 py-4 rounded-full text-base transition-all duration-200;
+  background: linear-gradient(135deg, #C9A227 0%, #F5DD81 50%, #C9A227 100%);
+  color: #111111;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+  transform: scale(1);
+}
+.btn-gold:hover  { box-shadow: 0 12px 40px rgba(212, 175, 55, 0.45); filter: brightness(1.05); }
+.btn-gold:active { transform: scale(0.97); }
+
+.btn-outline-gold {
+  @apply inline-flex items-center justify-center gap-2.5 font-semibold px-7 py-4 rounded-full text-base transition-all duration-200;
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  color: #D4AF37;
+  background: transparent;
+  transform: scale(1);
+}
+.btn-outline-gold:hover  { border-color: #D4AF37; background: rgba(212, 175, 55, 0.08); }
+.btn-outline-gold:active { transform: scale(0.97); }
+
+/* ── Accordion ── */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms var(--ease-out);
+}
+.accordion-content.open {
+  grid-template-rows: 1fr;
+}
+.accordion-inner {
+  overflow: hidden;
+}
+
+/* ── Custom scrollbar for horizontal trust bar ── */
+.trust-scroll::-webkit-scrollbar { display: none; }
+.trust-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    transition: opacity 200ms ease;
+    transform: none;
+  }
+  .btn-wa, .btn-gold, .btn-outline-gold { transition: opacity 150ms ease; }
+}
