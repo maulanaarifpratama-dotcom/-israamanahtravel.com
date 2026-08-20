@@ -27,17 +27,21 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 bg-[#0a0a0a]">
+        {/* Decorative only, so it is hidden from assistive tech. Audio was
+            stripped from the file since it plays muted and looped, and the
+            poster is a frame of this clip rather than the old social-media
+            poster, which had text baked into it. */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          poster="/assets/poster-hero.jpeg"
+          aria-hidden="true"
+          poster="/assets/hero-bg.jpg"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.44)' }}
         >
-          <source src="/assets/video-promo.mp4" type="video/mp4" />
-          <source src="/assets/video-promo2.mp4" type="video/mp4" />
+          <source src="/assets/hero-bg.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-transparent" />
