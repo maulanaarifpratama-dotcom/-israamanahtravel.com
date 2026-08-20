@@ -9,7 +9,6 @@ export interface Package {
   includes: string[]
   notIncludes?: string[]
   tanggalKeberangkatan?: string
-  gambar: string
   destinations: string[]
   hotels?: { kota: string; nama: string }[]
   airlines?: string[]
@@ -25,7 +24,6 @@ export const packages: Package[] = [
     highlight: false,
     tagline: 'Perjalanan ibadah terjangkau, penuh berkah',
     destinations: ['Mekkah', 'Madinah'],
-    gambar: '/assets/poster-hero.jpeg',
     includes: [
       'Tiket pesawat Luwuk – Jakarta PP',
       'Hotel transit Jakarta',
@@ -49,7 +47,6 @@ export const packages: Package[] = [
     badge: 'Best Seller',
     tagline: 'Ibadah lengkap: Baitullah & Masjidil Aqsa',
     destinations: ['Mekkah', 'Madinah', 'Jerusalem (Al-Aqsa)'],
-    gambar: '/assets/poster-services.jpeg',
     includes: [
       'Tiket pesawat Luwuk – Jakarta PP',
       'Hotel transit Jakarta',
@@ -75,7 +72,6 @@ export const packages: Package[] = [
     tagline: '12 hari ibadah + wisata Turki bersejarah',
     destinations: ['Mekkah', 'Madinah', 'Türkiye'],
     tanggalKeberangkatan: '20 November 2026',
-    gambar: '/assets/poster-turkey.jpeg',
     hotels: [
       { kota: 'Madinah', nama: 'Hotel Odest / Setaraf' },
       { kota: 'Mekkah', nama: 'Maysan Al Maqom / Setaraf' },
