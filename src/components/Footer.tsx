@@ -141,6 +141,7 @@ export default function Footer() {
                 { href: '#layanan', label: 'Layanan' },
                 { href: '#paket', label: 'Paket' },
                 { href: '#galeri', label: 'Galeri' },
+                { href: '#video', label: 'Video' },
                 { href: '#itinerary', label: 'Itinerary' },
               ].map((item) => (
                 <a

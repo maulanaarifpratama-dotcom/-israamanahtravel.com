@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import TrustBar from './components/TrustBar'
 import Services from './components/Services'
 import Packages from './components/Packages'
+import Gallery from './components/Gallery'
 import WhyUs from './components/WhyUs'
 import AgentCard from './components/AgentCard'
 import Tips from './components/Tips'
@@ -34,6 +35,8 @@ export default function App() {
       <TrustBar />
       <Services />
       <Packages />
+      {/* Proof lands straight after the prices, while intent is highest. */}
+      <Gallery />
       <WhyUs />
       <AgentCard />
       <Tips />

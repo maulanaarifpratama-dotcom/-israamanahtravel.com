@@ -129,13 +129,14 @@ function ComingSoonCard() {
 }
 
 export default function VideoSection() {
+  // #galeri now belongs to the photo Gallery; this section is the video.
   return (
-    <section id="galeri" className="bg-dark-900 py-20 px-5">
+    <section id="video" className="bg-dark-900 py-20 px-5">
       <div className="max-w-4xl mx-auto">
         <SectionTitle
           dark
-          label="Galeri & Testimoni"
-          title="Lihat Perjalanan Jamaah Kami"
+          label="Video Profil"
+          title="Kenali Isra Amanah Lebih Dekat"
           sub="Saksikan pengalaman nyata perjalanan ibadah bersama Isra Amanah Internasional."
         />
 
