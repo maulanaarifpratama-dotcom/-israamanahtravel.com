@@ -18,15 +18,20 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) — one loader, two destinations.
+         Google's own guidance is not to place more than one Google tag on a
+         page, so GA4 and Google Ads share this single gtag.js include and are
+         registered with a config call each. A second <script async src=...>
+         would load gtag.js twice and redefine gtag(). -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18402557370"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QH2FSBFVR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'AW-18402557370');
+      gtag('config', 'G-8QH2FSBFVR');   /* Google Analytics 4 */
+      gtag('config', 'AW-18402557370'); /* Google Ads */
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
