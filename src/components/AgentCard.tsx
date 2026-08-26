@@ -88,6 +88,7 @@ export default function AgentCard() {
                 href={getWALink()}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-wa-source="kartu-maya"
                 className="btn-wa inline-flex"
               >
                 <WhatsAppIcon />

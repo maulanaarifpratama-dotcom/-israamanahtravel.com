@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { initWhatsAppTracking } from './lib/analytics'
 import Hero from './components/Hero'
 import TrustBar from './components/TrustBar'
 import Services from './components/Services'
@@ -28,6 +29,9 @@ export default function App() {
     document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
+
+  // One delegated listener covers every WhatsApp CTA on the page.
+  useEffect(() => initWhatsAppTracking(), [])
 
   return (
     <main className="relative">

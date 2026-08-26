@@ -219,6 +219,7 @@ export default function VideoSection() {
                 href={getWALink('Konsultasi setelah melihat testimoni')}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-wa-item="Testimoni Hajah Ningsih"
                 className="btn-wa mt-6 text-sm py-3.5"
               >
                 Konsultasi dengan Maya

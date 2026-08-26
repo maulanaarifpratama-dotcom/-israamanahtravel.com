@@ -104,7 +104,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-float-up"
           style={{ animationDelay: '340ms' }}
         >
-          <a href={getWALink()} target="_blank" rel="noopener noreferrer" className="btn-wa w-full sm:w-auto">
+          <a href={getWALink()} target="_blank" rel="noopener noreferrer" data-wa-source="hero" className="btn-wa w-full sm:w-auto">
             <WhatsAppIcon />
             Hubungi Maya Sekarang
           </a>

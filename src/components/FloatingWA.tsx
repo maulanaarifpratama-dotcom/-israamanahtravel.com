@@ -17,6 +17,7 @@ export default function FloatingWA() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Hubungi Maya via WhatsApp"
+      data-wa-source="tombol-mengapung"
       className={`fixed bottom-6 right-5 z-50 flex items-center gap-2.5 rounded-full shadow-xl transition-all duration-500 ease-out ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}

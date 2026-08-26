@@ -113,6 +113,7 @@ export default function Downloads() {
                   href={getWALink(pdf.waPackage)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-wa-item={pdf.waPackage}
                   className="btn-wa flex-1 py-3 px-4 text-sm gap-2 whitespace-nowrap"
                 >
                   <WhatsAppIcon />

@@ -261,6 +261,7 @@ export default function Packages() {
                     href={getWALink(pkg.nama)}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-wa-item={pkg.nama}
                     className={`mt-auto w-full py-3.5 text-sm ${pkg.highlight ? 'btn-gold' : 'btn-outline-gold'}`}
                   >
                     <WhatsAppIcon />
