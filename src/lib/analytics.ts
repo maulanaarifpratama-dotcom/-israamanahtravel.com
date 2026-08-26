@@ -16,16 +16,12 @@ declare global {
 
 const GOOGLE_ADS_ID = 'AW-18402557370'
 
-/**
- * Conversion label from Google Ads → Goals → Conversions → the WhatsApp
- * conversion action → "Tag setup" → the value after the slash in
- * `AW-18402557370/XXXXXXXXX`.
- *
- * Left empty on purpose: firing a conversion against a guessed label would
- * send junk into the Ads account. GA4 tracking below works regardless; the
- * Ads conversion starts reporting the moment a real label is pasted here.
- */
-const ADS_CONVERSION_LABEL = ''
+/** Label for the "Contact" conversion action in Google Ads. */
+const ADS_CONVERSION_LABEL = 'ZjAMCOPNqeUcELr7gsdE'
+
+/** The conversion action is configured as "if there's no value, use IDR 1". */
+const ADS_CONVERSION_VALUE = 1.0
+const ADS_CONVERSION_CURRENCY = 'IDR'
 
 const WA_LINK_SELECTOR = 'a[href^="https://wa.me/"]'
 
@@ -48,15 +44,22 @@ export function trackWhatsAppClick(source: string, item?: string): void {
 
   // GA4: `generate_lead` is a recommended event, so it reports natively
   // instead of needing a custom definition.
+  //
+  // transport_type beacon matters here: most of this traffic is mobile, and
+  // tapping a wa.me link hands off to the WhatsApp app, which can background
+  // the page before a normal request flushes. sendBeacon survives that.
   gtag('event', 'generate_lead', {
     method: 'whatsapp',
     link_location: source,
+    transport_type: 'beacon',
     ...(item ? { item_name: item } : {}),
   })
 
   if (ADS_CONVERSION_LABEL) {
     gtag('event', 'conversion', {
       send_to: `${GOOGLE_ADS_ID}/${ADS_CONVERSION_LABEL}`,
+      value: ADS_CONVERSION_VALUE,
+      currency: ADS_CONVERSION_CURRENCY,
     })
   }
 }
