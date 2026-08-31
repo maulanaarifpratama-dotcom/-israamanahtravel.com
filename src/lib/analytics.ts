@@ -11,6 +11,7 @@ declare global {
   interface Window {
     dataLayer?: unknown[]
     gtag?: (...args: unknown[]) => void
+    fbq?: (...args: unknown[]) => void
   }
 }
 
@@ -62,6 +63,16 @@ export function trackWhatsAppClick(source: string, item?: string): void {
       currency: ADS_CONVERSION_CURRENCY,
     })
   }
+
+  // Meta: `Lead` is a standard event, so it can be used as an optimisation
+  // goal without defining a custom conversion first. Unlike the Ads label,
+  // this needs no extra identifier.
+  window.fbq?.('track', 'Lead', {
+    content_category: source,
+    ...(item ? { content_name: item } : {}),
+    value: ADS_CONVERSION_VALUE,
+    currency: ADS_CONVERSION_CURRENCY,
+  })
 }
 
 /** Attaches the delegated listener. Returns its cleanup function. */

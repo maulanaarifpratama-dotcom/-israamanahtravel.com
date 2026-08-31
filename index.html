@@ -34,6 +34,25 @@
       gtag('config', 'AW-18402557370'); /* Google Ads */
     </script>
 
+    <!-- Meta Pixel Code -->
+    <link rel="preconnect" href="https://connect.facebook.net" />
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2495169460908685');
+      fbq('track', 'PageView');
+    </script>
+    <!-- The <noscript> fallback lives in <body>: inside <head> the HTML spec
+         only permits link/style/meta in <noscript>, so an <img> there is
+         invalid and parse5 rejects it. -->
+    <!-- End Meta Pixel Code -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400..800&display=swap" rel="stylesheet" />
@@ -65,6 +84,11 @@
     </script>
   </head>
   <body>
+    <!-- Meta Pixel fallback for visitors without JavaScript -->
+    <noscript><img height="1" width="1" style="display:none" alt=""
+      src="https://www.facebook.com/tr?id=2495169460908685&ev=PageView&noscript=1"
+    /></noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
