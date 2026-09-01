@@ -40,6 +40,8 @@ const config: Config = {
           subtle:  '#5F6774', // meta / captions    —  5.3:1
           faint:   '#6B7280', // lowest allowed     —  4.8:1
         },
+        /* Garis tepi kartu di halaman /cs */
+        cs: { line: '#E8DBBB' },
         /* Gold that is actually readable as text on light backgrounds */
         goldink: {
           DEFAULT: '#7A6117', // small text  — 5.7:1 on white, 5.2:1 on cream
